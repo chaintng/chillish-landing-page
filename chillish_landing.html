@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chillish - Learn English Like Real People Speak</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+        }
+
+        /* Animated background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Floating elements */
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .floating-emoji {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-emoji:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+        .floating-emoji:nth-child(2) { top: 20%; right: 10%; animation-delay: 1s; }
+        .floating-emoji:nth-child(3) { bottom: 30%; left: 15%; animation-delay: 2s; }
+        .floating-emoji:nth-child(4) { bottom: 20%; right: 20%; animation-delay: 3s; }
+        .floating-emoji:nth-child(5) { top: 50%; left: 5%; animation-delay: 4s; }
+        .floating-emoji:nth-child(6) { top: 60%; right: 5%; animation-delay: 5s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            padding: 20px 0;
+            position: relative;
+            z-index: 100;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 15px 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 900;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            animation: slideInUp 1s ease;
+        }
+
+        .hero .subtitle {
+            font-size: clamp(1.2rem, 4vw, 2rem);
+            margin-bottom: 30px;
+            opacity: 0.9;
+            animation: slideInUp 1s ease 0.2s both;
+        }
+
+        .hero .description {
+            font-size: 1.3rem;
+            margin-bottom: 50px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.8;
+            animation: slideInUp 1s ease 0.4s both;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Feature Cards */
+        .features {
+            padding: 100px 0;
+            background: rgba(255, 255, 255, 0.95);
+            margin-top: 50px;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 60px;
+            color: #333;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .feature-emoji {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Roadmap Section */
+        .roadmap {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+        }
+
+        .roadmap h2 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 60px;
+        }
+
+        .roadmap-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .roadmap-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .roadmap-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+
+        .roadmap-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .roadmap-item p {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        /* CTA Section */
+        .final-cta {
+            padding: 100px 0;
+            text-align: center;
+            background: linear-gradient(135deg, #ff6b6b, #ffd93d);
+            color: white;
+        }
+
+        .final-cta h2 {
+            font-size: 3rem;
+            margin-bottom: 30px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .final-cta p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .final-cta .cta-button {
+            font-size: 1.2rem;
+            padding: 20px 50px;
+            background: rgba(0,0,0,0.2);
+            backdrop-filter: blur(10px);
+            border: 2px solid white;
+        }
+
+        .final-cta .cta-button:hover {
+            background: white;
+            color: #ff6b6b;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 40px 0;
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav {
+                flex-direction: column;
+                gap: 20px;
+                padding: 20px;
+            }
+            
+            .hero {
+                padding: 50px 0;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .features, .roadmap, .final-cta {
+                padding: 50px 0;
+            }
+        }
+
+        /* Interactive elements */
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .shake {
+            animation: shake 0.5s ease-in-out;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation"></div>
+    
+    <div class="floating-elements">
+        <div class="floating-emoji">🤖</div>
+        <div class="floating-emoji">📚</div>
+        <div class="floating-emoji">🔥</div>
+        <div class="floating-emoji">🌍</div>
+        <div class="floating-emoji">💬</div>
+        <div class="floating-emoji">✨</div>
+    </div>
+
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">Chillish</div>
+                <a href="#" class="cta-button pulse">Get Started</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Chillish</h1>
+            <div class="subtitle">Learn English the way real people speak</div>
+            <p class="description">
+                Powered by AI, designed for real life. Stop sounding like Google Translate and start speaking like a native. 🤖✨
+            </p>
+            <a href="#" class="cta-button">Start Learning Now</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2>✨ Features That Actually Work</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <span class="feature-emoji">⚙️</span>
+                    <h3>Setup Your Vibe</h3>
+                    <p>Pick your style: Professional 💼, Street 🧢, or Academic 📖. Every feature adapts to match your tone perfectly.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-emoji">📚</span>
+                    <h3>Smart Dictionary</h3>
+                    <p>Drop any word or phrase to get meaning, pronunciation, origin, and examples—all in your chosen style.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-emoji">✍️</span>
+                    <h3>Text Rewriter</h3>
+                    <p>Fix your text to sound more natural. We'll show you what's wrong and explain why, so you actually learn.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-emoji">🌍</span>
+                    <h3>Real Translation</h3>
+                    <p>Send any non-English text and get it back in chill, natural English that fits your vibe—no robotic translations.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-emoji">🧠</span>
+                    <h3>Smart Flashcards</h3>
+                    <p>Quiz-style flashcards with spaced repetition that actually help you remember new words long-term.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-emoji">🔥</span>
+                    <h3>Word of the Day</h3>
+                    <p>Discover new words daily with fun themes like Slang Saturday or Formal Friday. Stay engaged, stay learning.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="roadmap">
+        <div class="container">
+            <h2>⭐ Coming Soon</h2>
+            <div class="roadmap-grid">
+                <div class="roadmap-item">
+                    <h4>🎧 Listen Mode</h4>
+                    <p>Hear native pronunciation in different accents (US, UK, AU)</p>
+                </div>
+                
+                <div class="roadmap-item">
+                    <h4>🗣️ Practice Mode</h4>
+                    <p>Say words and phrases, get AI feedback on your pronunciation</p>
+                </div>
+                
+                <div class="roadmap-item">
+                    <h4>💬 Conversation Mode</h4>
+                    <p>Practice talking with AI in your chosen style</p>
+                </div>
+                
+                <div class="roadmap-item">
+                    <h4>👯‍♀️ Compare Styles</h4>
+                    <p>See the same sentence in Teen, Academic, and Professional styles</p>
+                </div>
+                
+                <div class="roadmap-item">
+                    <h4>📝 Smart Notes</h4>
+                    <p>Save words into themed notebooks like "Work English" or "Travel"</p>
+                </div>
+                
+                <div class="roadmap-item">
+                    <h4>🔗 Anki Integration</h4>
+                    <p>Connect with your favorite flashcard apps for seamless learning</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta">
+        <div class="container">
+            <h2>Ready to Sound Like a Native? 🚀</h2>
+            <p>Join thousands of learners who ditched boring language apps for something that actually works.</p>
+            <a href="#" class="cta-button">Download Chillish Now</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Chillish. Made with ❤️ for real English learners.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Add interactive elements
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Add click effects to buttons
+        document.querySelectorAll('.cta-button').forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                button.classList.add('shake');
+                setTimeout(() => {
+                    button.classList.remove('shake');
+                }, 500);
+                
+                // Add your actual CTA logic here
+                alert('🎉 Thanks for your interest! Chillish is coming soon!');
+            });
+        });
+
+        // Parallax effect for floating elements
+        document.addEventListener('mousemove', (e) => {
+            const floatingElements = document.querySelectorAll('.floating-emoji');
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            floatingElements.forEach((element, index) => {
+                const speed = (index + 1) * 0.5;
+                const xMove = (x - 0.5) * speed * 50;
+                const yMove = (y - 0.5) * speed * 50;
+                
+                element.style.transform = `translate(${xMove}px, ${yMove}px)`;
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe feature cards for scroll animations
+        document.querySelectorAll('.feature-card, .roadmap-item').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
