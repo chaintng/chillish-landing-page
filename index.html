@@ -341,6 +341,290 @@
             text-align: center;
         }
 
+        /* Screenshot Carousel Section */
+        .screenshots {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            position: relative;
+        }
+
+        .screenshots h2 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 60px;
+            color: #333;
+        }
+
+        .screenshot-carousel {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .carousel-container {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            min-height: 600px;
+        }
+
+        .screenshot-wrapper {
+            flex: 0 0 400px;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Phone Mockup */
+        .phone-mockup {
+            width: 300px;
+            height: 600px;
+            background: linear-gradient(145deg, #2c3e50, #34495e);
+            border-radius: 40px;
+            padding: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            position: relative;
+            transition: all 0.5s ease;
+        }
+
+        .phone-mockup:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+        }
+
+        .phone-mockup::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 6px;
+            background: #7f8c8d;
+            border-radius: 3px;
+        }
+
+        .phone-mockup::after {
+            content: '';
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 6px;
+            background: #7f8c8d;
+            border-radius: 3px;
+        }
+
+        .screen {
+            width: 100%;
+            height: 100%;
+            background: white;
+            border-radius: 30px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .screenshot-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .screenshot-placeholder img {
+            max-width: 100%;
+        }
+
+        .screenshot-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .placeholder-content {
+            text-align: center;
+            z-index: 1;
+        }
+
+        .placeholder-icon {
+            font-size: 4rem;
+            display: block;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+        }
+
+        .placeholder-content p {
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* Feature Details */
+        .feature-details {
+            flex: 1;
+            position: relative;
+        }
+
+        .feature-content {
+            opacity: 0;
+            transform: translateX(30px);
+            transition: all 0.5s ease;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .feature-content.active {
+            opacity: 1;
+            transform: translateX(0);
+            position: relative;
+        }
+
+        .feature-number {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-content h3 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #333;
+            line-height: 1.2;
+        }
+
+        .feature-content p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .feature-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-content li {
+            padding: 10px 0;
+            color: #555;
+            font-size: 1.1rem;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .feature-content li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #4ecdc4;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Navigation */
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .nav-btn {
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-btn:hover {
+            background: white;
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        .slide-indicators {
+            display: flex;
+            gap: 15px;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(0,0,0,0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .indicator.active {
+            background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+            transform: scale(1.3);
+        }
+
+        .keyboard-hint {
+            text-align: center;
+            margin-top: 30px;
+            opacity: 0.7;
+        }
+
+        .keyboard-hint p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .carousel-container {
+                flex-direction: column;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .screenshot-wrapper {
+                flex: none;
+            }
+
+            .phone-mockup {
+                width: 250px;
+                height: 500px;
+            }
+
+            .feature-content h3 {
+                font-size: 2rem;
+            }
+
+            .carousel-nav {
+                margin-top: 30px;
+            }
+        }
+
         /* Mailchimp Form Styles */
         .mailchimp-form {
             margin: 30px 0;
@@ -446,6 +730,128 @@
                 <br><br><strong>Coming Soon!</strong> Join our waitlist to be the first to know when we launch.
             </p>
             <a href="#waitlist" class="cta-button">Join the Waitlist</a>
+        </div>
+    </section>
+
+
+    <!-- Screenshot Carousel Section -->
+    <section class="screenshots">
+        <div class="container">
+            <h2>See chillish in Action 📱</h2>
+            <div class="screenshot-carousel">
+                <div class="carousel-container">
+                    <div class="screenshot-wrapper">
+                        <div class="phone-mockup">
+                            <div class="screen">
+                                <div class="screenshot-placeholder" data-feature="0">
+                                    <div class="placeholder-content">
+                                        <img src="screenshots/1-app-welcome.PNG" />
+                                    </div>
+                                </div>
+                                <div class="screenshot-placeholder" data-feature="1">
+                                    <div class="placeholder-content">
+                                        <img src="screenshots/2-choose-ur-style.PNG" />
+                                    </div>
+                                </div>
+                                <div class="screenshot-placeholder" data-feature="1">
+                                    <div class="placeholder-content">
+                                        <img src="screenshots/3-reinvent-dictionary.PNG" />
+                                    </div>
+                                </div>
+                                <div class="screenshot-placeholder" data-feature="1">
+                                    <div class="placeholder-content">
+                                        <img src="screenshots/4-rewrite-and-explain.PNG" />
+                                    </div>
+                                </div>
+                                <div class="screenshot-placeholder" data-feature="1">
+                                    <div class="placeholder-content">
+                                        <img src="screenshots/5-flashcard-promote-memory.PNG" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="feature-details">
+                        <div class="feature-content active" data-feature="0">
+                            <span class="feature-number">01</span>
+
+                            <h3>😎 chillish.app</h3>
+                            <p>🙅‍♂️ NO, not just another language app — this chill AI-powered tool helps you speak English like real people do, in your own vibe.</p>
+                            <ul>
+                                <li>🧠 Powered by LLMs (Large Language Models)</li>
+                                <li>🎯 Pick your style: slang, casual, clean or customize yourself</li>
+                                <li>🌱 Grow your English the fun, real-life way</li>
+                            </ul>
+                        </div>
+
+                        <div class="feature-content" data-feature="1">
+                            <span class="feature-number">02</span>
+                            <h3>⚙️ Choose Your Vibe</h3>
+                            <p>Start by selecting your learning style. Whether you want to sound professional for work, casual for friends, or academic for studies - chillish adapts everything to match your chosen tone.</p>
+                            <ul>
+                                <li>Professional 💼 - Perfect for business communication</li>
+                                <li>Street 🧢 - Casual, everyday conversations</li>
+                                <li>Academic 📖 - Formal, scholarly language</li>
+                                <li>Gen Z 🤸 - Slay mode on. Vibey, meme-ish, lowkey unhinged</li>
+                            </ul>
+                        </div>
+
+                        <div class="feature-content" data-feature="2">
+                            <span class="feature-number">03</span>
+
+                            <h3>📚 Tailored AI Dictionary</h3>
+                            <p>It learns and grows with you. Powered by AI, it understands your learning style and creates meaningful connections between words in your vocabulary bank, making it easier to learn and remember new words naturally.</p>
+                            <ul>
+                                <li>Revolutionary dictionary experience unlike any other</li>
+                                <li>Speaks your language, matches your style perfectly</li>
+                                <li>AI-powered learning that adapts to your usage</li>
+                                <li>Smart word connections to accelerate vocabulary growth</li>
+                            </ul>
+                        </div>
+
+                        <div class="feature-content" data-feature="3">
+                            <span class="feature-number">04</span>
+
+                            <h3>✍️ Text Rewriter</h3>
+                            <p>Paste your text and watch it transform into natural, native-sounding English. We don't just fix it - we explain what was wrong and why, so you actually learn.</p>
+                            <ul>
+                                <li>Instant text improvement in your style</li>
+                                <li>Break down and explain why it’s wrong, phrase by phrase</li>
+                                <li>Learn from your mistakes, like having a tutor in your pocket 24/7</li>
+                            </ul>
+                        </div>
+
+                        <div class="feature-content" data-feature="4">
+                            <span class="feature-number">05</span>
+                            <h3>🧠 Smart Flashcards</h3>
+                            <p>With spaced repetition, remembering words becomes effortless — we handle the dirty work, you just chill and practice with flashcards made just for you.</p>
+                            <ul>
+                                <li>Scientifically-proven spaced repetition = faster recall</li>
+                                <li>Auto-generate flashcards from your vocab</li>
+                                <li>Just chill, practice, and boost vocab with zero stress</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div class="carousel-nav">
+                    <button class="nav-btn prev-btn" onclick="changeSlide(-1)">❮</button>
+                    <div class="slide-indicators">
+                        <span class="indicator active" onclick="goToSlide(0)"></span>
+                        <span class="indicator" onclick="goToSlide(1)"></span>
+                        <span class="indicator" onclick="goToSlide(2)"></span>
+                        <span class="indicator" onclick="goToSlide(3)"></span>
+                        <span class="indicator" onclick="goToSlide(4)"></span>
+                    </div>
+                    <button class="nav-btn next-btn" onclick="changeSlide(1)">❯</button>
+                </div>
+
+                <div class="keyboard-hint">
+                    <p>💡 Use ← → arrow keys or swipe to navigate</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -574,6 +980,125 @@
             });
         });
 
+        // Screenshot carousel functionality
+        let currentSlide = 0;
+        const totalSlides = 5;
+
+        function updateCarousel() {
+            // Update screenshot placeholders
+            const screenshots = document.querySelectorAll('.screenshot-placeholder');
+            const features = document.querySelectorAll('.feature-content');
+            const indicators = document.querySelectorAll('.indicator');
+
+            screenshots.forEach((screenshot, index) => {
+                screenshot.style.display = index === currentSlide ? 'flex' : 'none';
+            });
+
+            features.forEach((feature, index) => {
+                if (index === currentSlide) {
+                    feature.classList.add('active');
+                } else {
+                    feature.classList.remove('active');
+                }
+            });
+
+            indicators.forEach((indicator, index) => {
+                if (index === currentSlide) {
+                    indicator.classList.add('active');
+                } else {
+                    indicator.classList.remove('active');
+                }
+            });
+
+            // Update screenshot content based on current slide
+            const currentScreenshot = screenshots[currentSlide];
+            const icons = ['⚙️', '📚', '✍️', '🌍', '🧠'];
+            const titles = ['Setup Screen', 'Dictionary View', 'Rewriter Tool', 'Translation Mode', 'Flashcard Quiz'];
+
+            currentScreenshot.querySelector('.placeholder-icon').textContent = icons[currentSlide];
+            currentScreenshot.querySelector('p').textContent = titles[currentSlide];
+
+            // Add gradient variation for each screen
+            const gradients = [
+                'linear-gradient(135deg, #667eea, #764ba2)',
+                'linear-gradient(135deg, #f093fb, #f5576c)',
+                'linear-gradient(135deg, #4facfe, #00f2fe)',
+                'linear-gradient(135deg, #43e97b, #38f9d7)',
+                'linear-gradient(135deg, #fa709a, #fee140)'
+            ];
+            currentScreenshot.style.background = gradients[currentSlide];
+        }
+
+        function changeSlide(direction) {
+            currentSlide += direction;
+            if (currentSlide >= totalSlides) currentSlide = 0;
+            if (currentSlide < 0) currentSlide = totalSlides - 1;
+            updateCarousel();
+        }
+
+        function goToSlide(slideIndex) {
+            currentSlide = slideIndex;
+            updateCarousel();
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                changeSlide(-1);
+            } else if (e.key === 'ArrowRight') {
+                changeSlide(1);
+            }
+        });
+
+        // Touch/swipe support for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.querySelector('.screenshot-carousel').addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.querySelector('.screenshot-carousel').addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    changeSlide(1); // Swipe left, go to next
+                } else {
+                    changeSlide(-1); // Swipe right, go to previous
+                }
+            }
+        }
+
+        // Auto-advance carousel (optional)
+        let autoAdvanceInterval;
+
+        function startAutoAdvance() {
+            autoAdvanceInterval = setInterval(() => {
+                changeSlide(1);
+            }, 5000); // Change slide every 5 seconds
+        }
+
+        function stopAutoAdvance() {
+            clearInterval(autoAdvanceInterval);
+        }
+
+        // Start auto-advance when page loads
+        startAutoAdvance();
+
+        // Pause auto-advance when user interacts
+        document.querySelector('.screenshot-carousel').addEventListener('mouseenter', stopAutoAdvance);
+        document.querySelector('.screenshot-carousel').addEventListener('mouseleave', startAutoAdvance);
+
+        // Initialize carousel
+        updateCarousel();
+
         // Add click effects to buttons
         document.querySelectorAll('.cta-button').forEach(button => {
             button.addEventListener('click', (e) => {
@@ -601,12 +1126,12 @@
 
         // Mailchimp form handling
         document.getElementById('mc-embedded-subscribe-form').addEventListener('submit', function(e) {
-            e.preventDefault();
 
             const email = document.getElementById('mce-EMAIL').value;
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
             if (!emailRegex.test(email)) {
+                e.preventDefault();
                 document.getElementById('mce-error-response').innerHTML = 'Please enter a valid email address';
                 document.getElementById('mce-error-response').style.display = 'block';
                 document.getElementById('mce-success-response').style.display = 'none';
@@ -641,6 +1166,7 @@
                 document.getElementById('mce-error-response').innerHTML = 'Something went wrong. Please try again later.';
                 document.getElementById('mce-error-response').style.display = 'block';
             });
+
         });
 
         // Parallax effect for floating elements
