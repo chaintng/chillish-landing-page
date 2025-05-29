@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chillish - Learn English Like Real People Speak</title>
+    <title>chillish - Reinvent Dictionary, Learn English Like Real People Speak</title>
     <style>
         * {
             margin: 0;
@@ -82,6 +82,12 @@
             z-index: 100;
         }
 
+        .header img {
+            height: 80px;
+            display: flex;
+            justify-content: center;
+        }
+
         .nav {
             display: flex;
             justify-content: space-between;
@@ -121,9 +127,25 @@
 
         /* Hero Section */
         .hero {
-            padding: 100px 0;
+            padding: 80px 0;
             text-align: center;
             color: white;
+        }
+
+        .hero img {
+            width: 60vw;
+            max-width: 600px;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .hero img {
+                display: none;
+            }
         }
 
         .hero h1 {
@@ -144,7 +166,7 @@
         .hero .description {
             font-size: 1.3rem;
             margin-bottom: 50px;
-            max-width: 600px;
+            max-width: 680px;
             margin-left: auto;
             margin-right: auto;
             opacity: 0.8;
@@ -310,22 +332,54 @@
             text-align: center;
         }
 
-        /* Responsive */
+        /* Mailchimp Form Styles */
+        .mailchimp-form {
+            margin: 30px 0;
+        }
+
+        .email-input {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .email-input:focus {
+            border-color: white;
+            background: white;
+            transform: scale(1.02);
+        }
+
+        .email-input::placeholder {
+            color: #666;
+        }
+
+        /* Responsive form */
+        @media (max-width: 768px) {
+            #mc_embed_signup_scroll {
+                flex-direction: column;
+            }
+
+            .email-input {
+                min-width: 100%;
+                margin-bottom: 15px;
+            }
+        }
         @media (max-width: 768px) {
             .nav {
                 flex-direction: column;
                 gap: 20px;
                 padding: 20px;
             }
-            
+
             .hero {
                 padding: 50px 0;
             }
-            
+
             .feature-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .features, .roadmap, .final-cta {
                 padding: 50px 0;
             }
@@ -355,7 +409,7 @@
 </head>
 <body>
     <div class="bg-animation"></div>
-    
+
     <div class="floating-elements">
         <div class="floating-emoji">🤖</div>
         <div class="floating-emoji">📚</div>
@@ -368,20 +422,21 @@
     <header class="header">
         <div class="container">
             <nav class="nav">
-                <div class="logo">Chillish</div>
-                <a href="#" class="cta-button pulse">Get Started</a>
+                <div class="logo"><img src="header-logo.png" alt="chillish - Reinvent Dictionary, Learn English the way real people speak" /></div>
+                <a href="#waitlist" class="cta-button pulse">Join Waitlist</a>
             </nav>
         </div>
     </header>
 
     <section class="hero">
         <div class="container">
-            <h1>Chillish</h1>
-            <div class="subtitle">Learn English the way real people speak</div>
+            <img src="chillish-logo.png" alt="chillish - Reinvent Dictionary, Learn English the way real people speak" />
+            <div class="subtitle">Reinvent Dictionary, Learn English the way real people speak</div>
             <p class="description">
-                Powered by AI, designed for real life. Stop sounding like Google Translate and start speaking like a native. 🤖✨
+                Powered by LLMs and AI, designed for real life. Stop sounding like Google Translate and start speaking like a native. 🤖✨
+                <br><br><strong>Coming Soon!</strong> Join our waitlist to be the first to know when we launch.
             </p>
-            <a href="#" class="cta-button">Start Learning Now</a>
+            <a href="#waitlist" class="cta-button">Join the Waitlist</a>
         </div>
     </section>
 
@@ -394,31 +449,31 @@
                     <h3>Setup Your Vibe</h3>
                     <p>Pick your style: Professional 💼, Street 🧢, or Academic 📖. Every feature adapts to match your tone perfectly.</p>
                 </div>
-                
+
                 <div class="feature-card">
                     <span class="feature-emoji">📚</span>
                     <h3>Smart Dictionary</h3>
                     <p>Drop any word or phrase to get meaning, pronunciation, origin, and examples—all in your chosen style.</p>
                 </div>
-                
+
                 <div class="feature-card">
                     <span class="feature-emoji">✍️</span>
                     <h3>Text Rewriter</h3>
                     <p>Fix your text to sound more natural. We'll show you what's wrong and explain why, so you actually learn.</p>
                 </div>
-                
+
                 <div class="feature-card">
                     <span class="feature-emoji">🌍</span>
                     <h3>Real Translation</h3>
                     <p>Send any non-English text and get it back in chill, natural English that fits your vibe—no robotic translations.</p>
                 </div>
-                
+
                 <div class="feature-card">
                     <span class="feature-emoji">🧠</span>
                     <h3>Smart Flashcards</h3>
                     <p>Quiz-style flashcards with spaced repetition that actually help you remember new words long-term.</p>
                 </div>
-                
+
                 <div class="feature-card">
                     <span class="feature-emoji">🔥</span>
                     <h3>Word of the Day</h3>
@@ -436,27 +491,27 @@
                     <h4>🎧 Listen Mode</h4>
                     <p>Hear native pronunciation in different accents (US, UK, AU)</p>
                 </div>
-                
+
                 <div class="roadmap-item">
                     <h4>🗣️ Practice Mode</h4>
                     <p>Say words and phrases, get AI feedback on your pronunciation</p>
                 </div>
-                
+
                 <div class="roadmap-item">
                     <h4>💬 Conversation Mode</h4>
                     <p>Practice talking with AI in your chosen style</p>
                 </div>
-                
+
                 <div class="roadmap-item">
                     <h4>👯‍♀️ Compare Styles</h4>
                     <p>See the same sentence in Teen, Academic, and Professional styles</p>
                 </div>
-                
+
                 <div class="roadmap-item">
                     <h4>📝 Smart Notes</h4>
                     <p>Save words into themed notebooks like "Work English" or "Travel"</p>
                 </div>
-                
+
                 <div class="roadmap-item">
                     <h4>🔗 Anki Integration</h4>
                     <p>Connect with your favorite flashcard apps for seamless learning</p>
@@ -465,17 +520,36 @@
         </div>
     </section>
 
-    <section class="final-cta">
+    <section id="waitlist" class="final-cta">
         <div class="container">
             <h2>Ready to Sound Like a Native? 🚀</h2>
-            <p>Join thousands of learners who ditched boring language apps for something that actually works.</p>
-            <a href="#" class="cta-button">Download Chillish Now</a>
+            <p>Join our waitlist and be among the first to experience English learning that actually works.</p>
+
+            <div id="mc_embed_signup" style="max-width: 500px; margin: 0 auto;">
+                <form action="https://script.google.com/macros/s/AKfycbyWcSZtEVAh7Yndm8UAT11QhVrUIOusVOEjKnK-Esmk0KrMC4-yttBQ-obcRtaTaKyQZw/exec" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="mailchimp-form" target="_blank" novalidate>
+                    <div id="mc_embed_signup_scroll" style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; align-items: center;">
+                        <input type="email" value="" name="email" class="email-input" id="mce-EMAIL" placeholder="Enter your email address" required style="flex: 1; min-width: 250px; padding: 15px 20px; border: none; border-radius: 25px; font-size: 1rem; outline: none;">
+                        <input type="submit" value="Join Waitlist" name="subscribe" id="mc-embedded-subscribe" class="cta-button" style="min-width: 150px;">
+                    </div>
+                    <div id="mce-responses" class="clear">
+                        <div class="response" id="mce-error-response" style="display:none; color: #ff6b6b; margin-top: 15px;"></div>
+                        <div class="response" id="mce-success-response" style="display:none; color: #667eea; margin-top: 15px; font-weight: 600;"></div>
+                    </div>
+                </form>
+            </div>
+
+            <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">
+                🎉 <strong>Early bird perks:</strong> Get 3 months free when we launch + exclusive access to beta features
+            </p>
         </div>
     </section>
 
-    <footer class="footer">
+        <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Chillish. Made with ❤️ for real English learners.</p>
+            <p>&copy; 2025 chillish. Coming soon to revolutionize English learning. ✨</p>
+            <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.7;">
+                Questions? Email us at por@okproduction.co.th
+            </p>
         </div>
     </footer>
 
@@ -485,7 +559,7 @@
             card.addEventListener('mouseenter', () => {
                 card.style.transform = 'translateY(-10px) scale(1.02)';
             });
-            
+
             card.addEventListener('mouseleave', () => {
                 card.style.transform = 'translateY(0) scale(1)';
             });
@@ -494,14 +568,69 @@
         // Add click effects to buttons
         document.querySelectorAll('.cta-button').forEach(button => {
             button.addEventListener('click', (e) => {
+                // Don't prevent default for mailchimp form submission
+                if (button.id === 'mc-embedded-subscribe') {
+                    return;
+                }
+
                 e.preventDefault();
                 button.classList.add('shake');
                 setTimeout(() => {
                     button.classList.remove('shake');
                 }, 500);
-                
-                // Add your actual CTA logic here
-                alert('🎉 Thanks for your interest! Chillish is coming soon!');
+
+                // Scroll to waitlist section
+                const waitlist = document.getElementById('waitlist');
+                if (waitlist) {
+                    waitlist.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
+                }
+            });
+        });
+
+        // Mailchimp form handling
+        document.getElementById('mc-embedded-subscribe-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const email = document.getElementById('mce-EMAIL').value;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailRegex.test(email)) {
+                document.getElementById('mce-error-response').innerHTML = 'Please enter a valid email address';
+                document.getElementById('mce-error-response').style.display = 'block';
+                document.getElementById('mce-success-response').style.display = 'none';
+                return;
+            }
+
+            // Hide error messages
+            document.getElementById('mce-error-response').style.display = 'none';
+
+            // Send POST request to Google Apps Script
+            fetch('https://script.google.com/macros/s/AKfycbyWcSZtEVAh7Yndm8UAT11QhVrUIOusVOEjKnK-Esmk0KrMC4-yttBQ-obcRtaTaKyQZw/exec', {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: `email=${encodeURIComponent(email)}`
+            }).then(() => {
+                document.getElementById('mce-success-response').innerHTML = '🎉 Awesome! You\'re on the waitlist. We\'ll notify you when chillish launches!';
+                document.getElementById('mce-success-response').style.display = 'block';
+                document.getElementById('mce-EMAIL').value = '';
+
+                // const button = document.getElementById('mc-embedded-subscribe');
+                // button.value = 'Welcome Aboard! 🎉';
+                // button.style.background = '#667eea';
+
+                // setTimeout(() => {
+                //     button.value = 'Join Waitlist';
+                //     button.style.background = '';
+                // }, 3000);
+            }).catch((e) => {
+                document.getElementById('mce-error-response').innerHTML = 'Something went wrong. Please try again later.';
+                document.getElementById('mce-error-response').style.display = 'block';
             });
         });
 
@@ -510,12 +639,12 @@
             const floatingElements = document.querySelectorAll('.floating-emoji');
             const x = e.clientX / window.innerWidth;
             const y = e.clientY / window.innerHeight;
-            
+
             floatingElements.forEach((element, index) => {
                 const speed = (index + 1) * 0.5;
                 const xMove = (x - 0.5) * speed * 50;
                 const yMove = (y - 0.5) * speed * 50;
-                
+
                 element.style.transform = `translate(${xMove}px, ${yMove}px)`;
             });
         });
