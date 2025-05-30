@@ -18,6 +18,11 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            --chillish-color: #FE4A40;
+        }
+
+        span.chillish-color {
+            color: var(--chillish-color);
         }
 
         body {
@@ -132,6 +137,39 @@
         .cta-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
+        }
+
+        /* Secondary button style */
+        .cta-button.secondary {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .cta-button.secondary:hover {
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+        }
+
+        /* Button container for hero section */
+        .hero-buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .hero-buttons .or {
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .hero-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
         }
 
         /* Hero Section */
@@ -724,12 +762,16 @@
     <section class="hero">
         <div class="container">
             <img src="chillish-logo.png" alt="chillish - Reinvent Dictionary, Learn English the way real people speak" />
-            <div class="subtitle">Reinvent Dictionary, Learn English the way real people speak</div>
+            <div class="subtitle">✨ Reinvent Dictionary, Learn English the way <i>real people</i> actually talk</div>
             <p class="description">
-                Powered by LLMs and AI, designed for real life. Stop sounding like Google Translate and start speaking like a native. 🤖✨
-                <br><br><strong>Coming Soon!</strong> Join our waitlist to be the first to know when we launch.
+                Powered by LLMs and AI, designed for real life. Stop sounding like Google Translate and start speaking like a native. 🎉
+                <br><br><strong>🚀 Coming Soon!</strong> Join our waitlist to be the first to know when we launch.
             </p>
-            <a href="#waitlist" class="cta-button">Join the Waitlist</a>
+            <div class="hero-buttons">
+            <a href="#waitlist" class="cta-button">✍️ Join the Waitlist</a>
+                <span class="or">or</span>
+                <a href="https://chatgpt.com/g/g-674c44a1936481918825c5b369a68907-chillish-app-gen-z-dictionary" target="_blank" class="cta-button secondary">Try it on ChatGPT 🤖</a>
+            </div>
         </div>
     </section>
 
@@ -737,7 +779,7 @@
     <!-- Screenshot Carousel Section -->
     <section class="screenshots">
         <div class="container">
-            <h2>See chillish in Action 📱</h2>
+            <h2>See <span class="chillish-color">chillish</span> in Action 📱</h2>
             <div class="screenshot-carousel">
                 <div class="carousel-container">
                     <div class="screenshot-wrapper">
@@ -776,7 +818,7 @@
                         <div class="feature-content active" data-feature="0">
                             <span class="feature-number">01</span>
 
-                            <h3>😎 chillish.app</h3>
+                            <h3>😎 <span class="chillish-color">chillish</span>, we’ve got u covered</h3>
                             <p>🙅‍♂️ NO, not just another language app — this chill AI-powered tool helps you speak English like real people do, in your own vibe.</p>
                             <ul>
                                 <li>🧠 Powered by LLMs (Large Language Models)</li>
@@ -788,7 +830,7 @@
                         <div class="feature-content" data-feature="1">
                             <span class="feature-number">02</span>
                             <h3>⚙️ Choose Your Vibe</h3>
-                            <p>Start by selecting your learning style. Whether you want to sound professional for work, casual for friends, or academic for studies - chillish adapts everything to match your chosen tone.</p>
+                            <p>Start by selecting your learning style. Whether you want to sound professional for work, casual for friends, or academic for studies - <span class="chillish-color">chillish</span> adapts everything to match your chosen tone.</p>
                             <ul>
                                 <li>Professional 💼 - Perfect for business communication</li>
                                 <li>Street 🧢 - Casual, everyday conversations</li>
@@ -817,7 +859,7 @@
                             <p>Paste your text and watch it transform into natural, native-sounding English. We don't just fix it - we explain what was wrong and why, so you actually learn.</p>
                             <ul>
                                 <li>Instant text improvement in your style</li>
-                                <li>Break down and explain why it’s wrong, phrase by phrase</li>
+                                <li>Break down and explain why it's wrong, phrase by phrase</li>
                                 <li>Learn from your mistakes, like having a tutor in your pocket 24/7</li>
                             </ul>
                         </div>
@@ -961,7 +1003,7 @@
 
         <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 chillish. Coming soon to revolutionize English learning. ✨</p>
+            <p>&copy; 2025 <span class="chillish-color">chillish</span>. Coming soon to revolutionize English learning. ✨</p>
             <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.7;">
                 Questions? Email us at por@okproduction.co.th
             </p>
