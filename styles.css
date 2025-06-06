@@ -781,3 +781,22 @@ body {
         transform: translateX(5px);
     }
 }
+
+/* Mailchimp response messages */
+#mce-error-response, #mce-success-response {
+    display: none;
+    margin-top: 15px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+#mce-error-response {
+    color: #fff;
+    background-color: #e74c3c;
+}
+
+#mce-success-response {
+    color: #fff;
+    background-color: #38c172;
+}
