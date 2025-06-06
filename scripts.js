@@ -155,13 +155,13 @@ block: 'center'
 
 // Mailchimp form handling
 document.getElementById('mc-embedded-subscribe-form').addEventListener('submit', function(e) {
+e.preventDefault();
 
 const email = document.getElementById('mce-EMAIL').value;
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 if (!emailRegex.test(email)) {
-e.preventDefault();
-document.getElementById('mce-error-response').innerHTML = 'Please enter a valid email address';
+    document.getElementById('mce-error-response').innerHTML = 'Please enter a valid email address';
 document.getElementById('mce-error-response').style.display = 'block';
 document.getElementById('mce-success-response').style.display = 'none';
 return;
