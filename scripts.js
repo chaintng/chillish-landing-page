@@ -170,6 +170,9 @@ document
   .addEventListener("submit", function (e) {
     e.preventDefault();
 
+    const button = document.getElementById("mc-embedded-subscribe");
+    const spinner = document.getElementById("loading-spinner");
+
     const email = document.getElementById("mce-EMAIL").value;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -183,6 +186,11 @@ document
 
     // Hide error messages
     document.getElementById("mce-error-response").style.display = "none";
+
+    // Show loading state
+    button.disabled = true;
+    button.value = "Submitting...";
+    if (spinner) spinner.style.display = "inline-block";
 
     // Send POST request to Google Apps Script
     fetch(
@@ -215,6 +223,11 @@ document
         document.getElementById("mce-error-response").innerHTML =
           "Something went wrong. Please try again later.";
         document.getElementById("mce-error-response").style.display = "block";
+      })
+      .finally(() => {
+        button.disabled = false;
+        button.value = "Join Waitlist";
+        if (spinner) spinner.style.display = "none";
       });
   });
 
