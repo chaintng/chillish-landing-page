@@ -44,9 +44,6 @@ const currentScreenshot = screenshots[currentSlide];
 const icons = ['⚙️', '📚', '✍️', '🌍', '🧠'];
 const titles = ['Setup Screen', 'Dictionary View', 'Rewriter Tool', 'Translation Mode', 'Flashcard Quiz'];
 
-currentScreenshot.querySelector('.placeholder-icon').textContent = icons[currentSlide];
-currentScreenshot.querySelector('p').textContent = titles[currentSlide];
-
 // Add gradient variation for each screen
 const gradients = [
 'linear-gradient(135deg, #667eea, #764ba2)',
