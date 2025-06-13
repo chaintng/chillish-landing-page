@@ -4,3 +4,7 @@
 Reinvent the Dictionary, Learn English the way real people speak, Powered by LLMs.
 
 Visit main website at [https://chillish.app]()
+
+## Policies
+- [Privacy Policy](./privacy.html)
+- [User Data Deletion](./data-deletion.html)
