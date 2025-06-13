@@ -14,7 +14,11 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: #333;
+    color: white;
+}
+
+a {
+    color: white;
 }
 
 /* Animated background */
