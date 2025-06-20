@@ -140,7 +140,7 @@ document
 updateCarousel();
 
 // Add click effects to buttons
-document.querySelectorAll(".cta-button").forEach((button) => {
+document.querySelectorAll("#cta-join-waitlist").forEach((button) => {
   button.addEventListener("click", (e) => {
     // Don't prevent default for mailchimp form submission
     if (button.id === "mc-embedded-subscribe") {
