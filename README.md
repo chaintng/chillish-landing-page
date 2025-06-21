@@ -1,7 +1,7 @@
-![chillish landing page](./landing-page.jpeg)
+![Chillish free dictionary landing page](./landing-page.jpeg)
 
 # chilllish 📕
-Reinvent the Dictionary, Learn English the way real people speak, Powered by LLMs.
+Chillish is a free English dictionary powered by AI and LLMs. Reinvent the dictionary and learn English the way real people speak.
 
 Visit main website at [https://chillish.app](https://chillish.app)
 
