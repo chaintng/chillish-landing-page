@@ -1,7 +1,7 @@
 ![Chillish free dictionary landing page](./landing-page.jpeg)
 
 # chilllish 📕
-Chillish is a free English dictionary powered by AI and LLMs. Reinvent the dictionary and learn English the way real people speak.
+Chillish is a free AI universal dictionary powered by LLMs. Reinvent the dictionary and learn any language the way real people speak.
 
 Visit main website at [https://chillish.app](https://chillish.app)
 
