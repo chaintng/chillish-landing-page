@@ -11,7 +11,7 @@ document.querySelectorAll(".feature-card").forEach((card) => {
 
 // Screenshot carousel functionality
 let currentSlide = 0;
-const totalSlides = 5;
+const totalSlides = 6;
 
 function updateCarousel() {
   // Update screenshot placeholders
@@ -41,13 +41,14 @@ function updateCarousel() {
 
   // Update screenshot content based on current slide
   const currentScreenshot = screenshots[currentSlide];
-  const icons = ["⚙️", "📚", "✍️", "🌍", "🧠"];
+  const icons = ["⚙️", "📚", "✍️", "🌍", "🧠", "🌐"];
   const titles = [
     "Setup Screen",
     "Dictionary View",
     "Rewriter Tool",
     "Translation Mode",
     "Flashcard Quiz",
+    "Language Support",
   ];
 
   // Add gradient variation for each screen
@@ -57,6 +58,7 @@ function updateCarousel() {
     "linear-gradient(135deg, #4facfe, #00f2fe)",
     "linear-gradient(135deg, #43e97b, #38f9d7)",
     "linear-gradient(135deg, #fa709a, #fee140)",
+    "linear-gradient(135deg, #ff9a9e, #fad0c4)",
   ];
   currentScreenshot.style.background = gradients[currentSlide];
 }
