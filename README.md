@@ -5,6 +5,9 @@ Chillish is a free AI universal dictionary powered by LLMs. Reinvent the diction
 
 Visit main website at [https://chillish.app](https://chillish.app)
 
+## Feedback
+Have ideas or suggestions? [Send us your feedback](https://www.facebook.com/share/g/19LWcw1LA9/).
+
 ## Policies
 - [Privacy Policy](./privacy.html)
 - [User Data Deletion](./data-deletion.html)
