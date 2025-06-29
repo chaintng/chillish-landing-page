@@ -636,7 +636,7 @@ p + p {
     display: flex;
     align-items: center;
     transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    justify-content: center;
 }
 
 .slide-indicators {
