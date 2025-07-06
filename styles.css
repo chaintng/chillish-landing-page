@@ -786,7 +786,7 @@ p + p {
     }
 }
 
-/* Loading spinner for waitlist form */
+/* Loading spinner for forms */
 .loading-spinner {
     border: 3px solid #fff;
     border-top: 3px solid rgba(255, 255, 255, 0.3);
