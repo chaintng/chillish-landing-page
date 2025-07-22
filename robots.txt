@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Allow: /_next/
+Allow: /images/
+Sitemap: https://my.chillish.app/sitemap.xml
