@@ -1,3 +1,4 @@
+# Welcome friendly bots! Feel free to crawl everything.
 User-agent: *
 Allow: /
 Allow: /_next/
