@@ -1,4 +1,4 @@
-![Chillish free dictionary landing page](./landing-page.jpeg)
+![chillish free dictionary landing page](./landing-page.jpeg)
 
 <p align="center">
   <a href="https://www.producthunt.com/products/chillish?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-chillish" target="_blank">
@@ -7,7 +7,7 @@
 </p>
 
 # chilllish 📕
-Chillish is a free AI universal dictionary powered by LLMs. Reinvent the dictionary and learn any language the way real people speak.
+chillish is a free AI universal dictionary powered by LLMs. Reinvent the dictionary and learn any language the way real people speak.
 
 Visit main website at [https://chillish.app](https://chillish.app)
 
