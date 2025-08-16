@@ -330,6 +330,47 @@ p + p {
     line-height: 1.6;
 }
 
+/* Why Chillish Section */
+.why-chillish {
+    padding: 100px 0;
+    color: white;
+}
+
+.why-chillish h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 60px;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.why-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    text-align: left;
+}
+
+.why-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.why-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.why-card li {
+    margin-bottom: 10px;
+}
+
 /* Roadmap Section */
 .roadmap {
     padding: 100px 0;
@@ -744,7 +785,7 @@ p + p {
         grid-template-columns: 1fr;
     }
 
-    .features, .roadmap, .final-cta {
+    .features, .roadmap, .final-cta, .why-chillish {
         padding: 50px 0;
     }
 }
